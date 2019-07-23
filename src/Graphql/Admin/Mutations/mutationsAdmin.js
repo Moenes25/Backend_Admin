@@ -1,4 +1,4 @@
-import { Admin } from "./d";
+import { Admin } from "../../../model/schemaDB";
  
 export const resolvers = {
   Query: {
