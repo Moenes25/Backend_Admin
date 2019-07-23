@@ -1,5 +1,6 @@
-import { Admin } from "../../../model/schemaDB";
+import { Admin } from "../Types/typesAdmin";
  
+
 export const resolvers = {
   Query: {
     superAdmin: () => Admin.find()

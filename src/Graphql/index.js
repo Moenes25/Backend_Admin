@@ -1,7 +1,8 @@
-import typeDefs from "../Types/TypesAdmin"
-import resolvers from '../Mutations/mutationsAdmin'
+import typeDefs from "./Admin/Types/typesAdmin"
 
-export const Schema = {
+import resolvers from '../Graphql/Admin/Mutations/mutationsAdmin'
+
+export   {
  typeDefs,
  resolvers
 };
