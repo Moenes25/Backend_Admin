@@ -1,4 +1,4 @@
-import { Admin } from "../Types/typesAdmin";
+import { Admin } from "../../../model/schemaDB";
  
 
 export const resolvers = {
