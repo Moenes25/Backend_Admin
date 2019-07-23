@@ -17,7 +17,7 @@ const startServer = async () => {
 
  server.applyMiddleware({ app });
 
- await mongoose.connect("mongodb://localhost:27017/test", {
+ await mongoose.connect("mongodb://localhost:27017/superAdmin", {
    useNewUrlParser: true });
 
  app.listen({ port: 4000 }, () =>
