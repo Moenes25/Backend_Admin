@@ -3,10 +3,11 @@ import { gql } from "apollo-server-express";
 export const typeDefs = gql`
   type Query {
     superAdmin: [Admin!]!
+    getTalk(id: String!): [Admin!]!
   }
 
   type Admin {
-    id: ID!
+    _id: ID!
     name: String !
     username: String!
     password: String!
@@ -18,6 +19,6 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    createAdmin( username: String! password: String! admin:String!): Admin!
+    createAdmin( username: String! password: String! ): Admin!
   }
 `;

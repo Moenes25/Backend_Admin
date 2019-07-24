@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 export const Admin = mongoose.model("Admin", {
+
 	name: String ,
 	username: String,
 	password: String ,
@@ -8,5 +9,6 @@ export const Admin = mongoose.model("Admin", {
 	address: String ,
 	created_at: String ,
 	updated_at: String,
-	company_client: String
+	company_client: String,
+     _id:String
 });
