@@ -11,14 +11,14 @@ export const resolvers = {
   // will 
   Mutation: {
     createAdmin: async (_, { 
-      id,
+      _id,
       username, 
       password,  
       admin ,
       
     }) => {
       const UpdateAdmin = new Admin({  
-         id, 
+         _id, 
         username, 
         password,  
         admin,
