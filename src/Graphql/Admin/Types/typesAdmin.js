@@ -2,12 +2,13 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Query {
-    superAdmin: [Admin!]!
-    getTalk(id: String!): [Admin!]!
+    FindAllAdmin: [Admin!]!
+    getAdminById(_id: String!): [Admin!]!
+
   }
 
   type Admin {
-    _id: ID!
+    _id: String!
     name: String !
     username: String!
     password: String!
@@ -19,6 +20,6 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    createAdmin( username: String! password: String! ): Admin!
+    createAdmin( username: String! password: String!): Admin!
   }
 `;
