@@ -6,8 +6,7 @@ import { Mutation } from "../src/Graphql/Admin/Mutations/mutationsAdmin";
 import { typeDefs } from "../src/Graphql/Admin/Types/typesAdmin";
 import { Query } from "../src/Graphql/Admin/Query/queryAdmin";
 
- 
-                      
+ // root server                     
 const startServer = async () => {
  const app = express();
 
@@ -16,16 +15,17 @@ const startServer = async () => {
   typeDefs,
   // extend Query and Mutation
  resolvers:[Query,Mutation]
- });
+});
+
 
  server.applyMiddleware({ app });
  // connect to Mongodb database
  await mongoose.connect("mongodb://localhost:27017/Admindb", {
    useNewUrlParser: true });
-
+ // starting the server on port 4001
  app.listen({ port: 4001 }, () =>
-   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+   console.log(`🚀 Server ready at http://localhost:4001${server.graphqlPath}`)
  );
 };
-
+// call the root Function
 startServer();
