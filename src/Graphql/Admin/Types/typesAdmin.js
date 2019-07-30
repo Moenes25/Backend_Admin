@@ -7,6 +7,7 @@ export const typeDefs = gql`
     FindAllAdmin: [Admin!]!
     # geting user by ID
     getAdminById(_id: String!): [Admin!]!
+    
   }
   # we define User type and what type of data we can get from it
   type Admin {
@@ -15,9 +16,6 @@ export const typeDefs = gql`
     username: String!
     password: String!
     admin: String!
-    address: String!
-    created_at: String!
-    updated_at: String!
     company_client: String! 
     jwt: String!
     createDate: String

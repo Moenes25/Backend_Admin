@@ -1,5 +1,4 @@
-import { ApolloServer } from "apollo-server-express";
-import express from "express";
+import { ApolloServer } from "apollo-server";
 import mongoose from "mongoose";
 
 import { Mutation } from "../src/Graphql/Admin/Mutations/mutationsAdmin";
@@ -8,7 +7,7 @@ import { Query } from "../src/Graphql/Admin/Query/queryAdmin";
 
  // root server                     
 const startServer = async () => {
- const app = express();
+
 
 // this will handel the work with mongodb
  const server = new ApolloServer({
@@ -18,14 +17,13 @@ const startServer = async () => {
 });
 
 
- server.applyMiddleware({ app });
  // connect to Mongodb database
  await mongoose.connect("mongodb://localhost:27017/Admindb", {
    useNewUrlParser: true });
- // starting the server on port 4001
- app.listen({ port: 4001 }, () =>
-   console.log(`🚀 Server ready at http://localhost:4001${server.graphqlPath}`)
- );
+ // starting the server on port 4000
+ server.listen().then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`)
+});
 };
 // call the root Function
 startServer();
