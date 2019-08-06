@@ -7,7 +7,7 @@ export const Mutation = {
   // the root of mutation that will make change on Database
   Mutation: {
     // update database with new Admin 
-    createAdmin: async (_, {  username, password, email}) => {
+    createAdmin: async (_, {  username, password, email, type}) => {
 
       // test if we have username in database 
       const SetAdmin = await Admin.findOne({ email });
@@ -25,7 +25,8 @@ export const Mutation = {
           // Saving Hash Password  
           password: passHash,
           createDate: new Date(),
-          email
+          email,
+          type
         }); 
           // Add new User and return it
           SaveAdmin.save()

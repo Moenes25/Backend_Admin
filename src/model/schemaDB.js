@@ -10,7 +10,8 @@ export const Admin = mongoose.model("Admin", {
 	updated_at: String,
 	company_client: String,
 	createDate: String,
-	email: String
+	email: String,
+	type: String
 });
 
 
