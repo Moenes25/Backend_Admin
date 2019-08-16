@@ -20,10 +20,13 @@ export const typeDefs = gql`
     createDate: String
     email: String!
     type: String!
+    updateDate: String!
   }
   # the root of accessing the Database and make change on it
   type Mutation {
     createAdmin(username: String! password: String! email: String! type:String!): Admin!
     login(email: String! password: String!): Admin!
+    deleteUser(_id: ID!): Admin!
+    updateUser( type:String! _id: ID!): Admin
   }
 `;

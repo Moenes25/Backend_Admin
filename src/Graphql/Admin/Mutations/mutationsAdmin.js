@@ -6,6 +6,26 @@ import jwt from "jsonwebtoken";
 export const Mutation = {
   // the root of mutation that will make change on Database
   Mutation: {
+    updateUser: async (_,{ type,_id}) => {
+      const findId = await Admin.find({_id})
+
+      if(!findId){
+        throw new Error('please try again')
+      }
+
+      const saveUpdate = await Admin.updateOne({_id}, {$set: {
+        type,
+        updateDate: new Date()
+        }})
+      // saveUpdate.save();
+      return saveUpdate;
+
+
+    },
+    deleteUser: async (_,{_id}) => {
+       await Admin.deleteOne({_id})
+
+    },
     // update database with new Admin 
     createAdmin: async (_, {  username, password, email, type}) => {
 
