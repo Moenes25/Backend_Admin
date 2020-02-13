@@ -18,7 +18,7 @@ const startServer = async () => {
 
 
  // connect to Mongodb database
- await mongoose.connect("mongodb://localhost:27017/Admindb", {
+ await mongoose.connect("mongodb://localhost:27017/Admin", {
    useNewUrlParser: true });
  // starting the server on port 3000
  server.listen(5000).then(({ url }) => {
